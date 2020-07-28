@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HeaderFlix from './components/HeaderFlix';
+import LogoMflix from './components/LogoMflix';
+import ButtonFlix from './components/ButtonFlix';
+import FooterFlix from './components/FooterFlix';
+import LinkFlix from './components/LinkFlix';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <>
+      <HeaderFlix>
+        <LogoMflix />
+        <ButtonFlix as="a" href="/">Novo vídeo</ButtonFlix>
+      </HeaderFlix>
+
+      {/* <FooterFlix>
+        <LogoMflix />
+        <p>Site feito na <strong>#ImersãoReact</strong> da
+        <LinkFlix href="https://alura.com.br"> Alura</LinkFlix>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </FooterFlix> */}
+    </>
+  )
 }
 
 export default App;
