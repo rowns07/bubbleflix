@@ -7,16 +7,8 @@ const ButtonFlix = styled.button`
     border:1px solid var(--color-gray-light);
     border-radius:4px;
     font-size:18rem;
+    text-decoration:none;
     cursor:pointer;
 `;
-
-
-
-// function ButtonFlix(props) {
-//     console.log(props);
-//     return (
-//         <a href={props.href} className={props.className}> </a>
-//     );
-// }
 
 export default ButtonFlix;

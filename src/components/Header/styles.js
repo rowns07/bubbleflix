@@ -10,6 +10,10 @@ const HeaderFlix = styled.header`
     padding:30px 40px;
     background-color:var(--color-black-dark);
     border-bottom:2px solid var(--color-primary-medium);
+    position:fixed;
+    width:100vw;
+    z-index:999;
+    box-sizing:border-box;
 
 
     @media(max-width:800px){
