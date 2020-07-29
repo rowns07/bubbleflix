@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import LogoMflix from '../LogoMflix';
+import LogoBubbleFlix from '../Logo';
 
 
 const FooterFlix = styled.footer`
@@ -12,7 +12,7 @@ color:var(--color-gray-light);
 padding:20rem 0;
 border-top:4px dotted var(--color-primary-medium)
 
-& > ${LogoMflix}{
+& > ${LogoBubbleFlix}{
     margin-bottom:20rem;
 }
 

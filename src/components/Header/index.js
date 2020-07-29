@@ -1,14 +1,14 @@
 import React from 'react';
 import HeaderFlix from './styles';
-import ButtonFlix from '../ButtonFlix';
-import LogoMflix from '../LogoMflix';
+import ButtonFlix from '../Button';
+import LogoBubbleFlix from '../Logo';
 import { Link } from 'react-router-dom';
 
 function Menu() {
   return (
     <HeaderFlix>
       <Link to="/">
-        <LogoMflix />
+        <LogoBubbleFlix />
       </Link>
       <ButtonFlix as={Link} to="/cadastro/video">
         Novo vídeo

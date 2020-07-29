@@ -1,6 +1,6 @@
 import React from 'react';
 import FooterM from '../FooterFlix';
-import Menu from '../HeaderFlix';
+import Menu from '../Header';
 import styled from 'styled-components';
 
 const Main = styled.main`

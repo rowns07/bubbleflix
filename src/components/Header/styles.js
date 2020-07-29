@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ButtonFlix from '../ButtonFlix';
-import LogoMflix from '../LogoMflix';
+import ButtonFlix from '../Button';
+import LogoBubbleFlix from '../Logo';
 
 
 const HeaderFlix = styled.header`
@@ -16,7 +16,7 @@ const HeaderFlix = styled.header`
         justify-content:center;
         padding:15px 16px;
 
-        & > ${LogoMflix} {
+        & > ${LogoBubbleFlix} {
             height:35px;
         }
 

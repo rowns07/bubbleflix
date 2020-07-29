@@ -1,8 +1,7 @@
 
 import React from 'react';
-import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
-import ButtonFlix from '../../../components/ButtonFlix';
+import PageDefault from '../../../components/PageDefault';
 
 
 function CadastroVideo() {
@@ -12,9 +11,7 @@ function CadastroVideo() {
                 <h1>Cadastro de Video</h1>
 
                 <Link to="/cadastro/categoria">
-                    <ButtonFlix>
-                        Cadastrar Categoria
-                    </ButtonFlix>
+                    Cadastrar Categoria
                 </Link>
 
             </div>

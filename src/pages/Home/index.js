@@ -1,10 +1,10 @@
 import React from 'react';
 import BannerMain from '../../components/BannerMain';
-import ButtonFlix from '../../components/ButtonFlix';
+import ButtonFlix from '../../components/Button';
 import Carousel from '../../components/Carousel';
 import FooterM from '../../components/FooterFlix';
-import HeaderFlix from '../../components/HeaderFlix';
-import LogoMflix from '../../components/LogoMflix';
+import HeaderFlix from '../../components/Header';
+import LogoBubbleFlix from '../../components/Logo';
 import dadosIniciais from '../../data/dados_iniciais.json';
 
 
@@ -13,7 +13,7 @@ function Home() {
     <>
       <div style={{ background: "#141414" }}>
         <HeaderFlix>
-          <LogoMflix />
+          <LogoBubbleFlix />
           <ButtonFlix as="a" href="/">Novo vídeo</ButtonFlix>
         </HeaderFlix>
 
