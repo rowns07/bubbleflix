@@ -1,22 +1,21 @@
-import styled from 'styled-components';
-import LogoMflix from '../LogoMflix';
+import React from 'react';
+import  FooterFlix  from './style';
 
-
-const FooterFlix = styled.footer`
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:16rem;
-background-color:var(--color-black-dark);
-color:var(--color-gray-light);
-padding:20rem 0;
-border-top:4px dotted var(--color-primary-medium)
-
-& > ${LogoMflix}{
-    margin-bottom:20rem;
+function FooterM() {
+  return (
+    <FooterFlix>
+      <a href="https://www.alura.com.br/">
+        <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
+      </a>
+      <p>
+        Criado durante a 
+        {' '}
+        <a href="https://www.alura.com.br/">
+          Imersão React da Alura
+        </a>
+      </p>
+    </FooterFlix>
+  );
 }
 
-
-`;
-
-export default FooterFlix;
+export default FooterM;
