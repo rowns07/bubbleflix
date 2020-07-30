@@ -18,9 +18,9 @@ function Home() {
         </HeaderFlix>
 
         <BannerMain
-          videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-          url={dadosIniciais.categorias[0].videos[0].url}
-          videoDescription={"DESCRICAO"}>
+          videoTitle={dadosIniciais.categorias[0].videos[3].titulo}
+          url={dadosIniciais.categorias[0].videos[3].url}
+          videoDescription={"Corinthians Tricampeão Paulista"}>
         </BannerMain>
 
         <Carousel
@@ -31,11 +31,6 @@ function Home() {
         <Carousel
           ignoreFirstVideo
           category={dadosIniciais.categorias[1]}
-        />
-
-        <Carousel
-          ignoreFirstVideo
-          category={dadosIniciais.categorias[2]}
         />
 
         <Carousel
