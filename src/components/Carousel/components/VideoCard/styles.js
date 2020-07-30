@@ -33,3 +33,5 @@ export const VideoCardContainer = styled.a`
     margin-left: 20px;
   }
 `;
+
+export default VideoCardContainer;
