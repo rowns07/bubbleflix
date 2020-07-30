@@ -35,7 +35,7 @@ function CadastroCategoria() {
 
         <form onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault();
-          console.log('enviou né brabo?');
+          // console.log('enviou né brabo?');
           setCategories([
             ...categories,
             values,
@@ -43,44 +43,40 @@ function CadastroCategoria() {
           setValues(formData);
         }}
         >
-          <div>
-            <FormField
-              label="Nome da Categoria"
-              type="text"
-              value={values.name}
-              name="name"
-              onChange={handleChange}
-            />
-          </div>
+          <FormField
+            label="Nome da Categoria"
+            type="text"
+            value={values.name}
+            name="name"
+            onChange={handleChange}
+          />
 
-          <div>
-            <FormField
-              label="Descrição"
-              type="area"
-              name="description"
-              value={values.description}
-              onChange={handleChange}
-            />
-          </div>
+          <FormField
+            label="Descrição"
+            type="textarea"
+            name="description"
+            value={values.description}
+            onChange={handleChange}
+          />
 
-          <div>
-            <FormField
-              label="Cor"
-              type="color"
-              name="color"
-              value={values.color}
-              onChange={handleChange}
-            />
-          </div>
+          <FormField
+            label="Cor"
+            type="color"
+            name="color"
+            value={values.color}
+            onChange={handleChange}
+          />
 
-          <button type="button">
+          <button type="submit">
             Cadastrar
           </button>
+
         </form>
         <br />
         <ul>
-          {categories.map((category) => (
-            <li key={category.name}>
+          {categories.map((category, indice) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={`${category}${indice}`}>
               {category.name}
             </li>
           ))}
