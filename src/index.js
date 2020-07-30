@@ -21,8 +21,8 @@ ReactDOM.render(
       <Route path="/" component={Home} exact />
 
       {/* FORMA NORMAL DE IMPORTAR COMPONENTE NA ROTA */}
-      <Route path="/cadastro/video"  >
-        <CadastroVideo />
+      <Route path="/cadastro/video"  component={CadastroVideo}>
+        {/* <CadastroVideo /> */}
       </Route>
       {/* FORMA SIMPLIFICADA */}
       <Route path="/cadastro/categoria" component={CadastroCategoria} />

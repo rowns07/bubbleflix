@@ -14,7 +14,7 @@ function Home() {
       <div style={{ background: "#141414" }}>
         <HeaderFlix>
           <LogoBubbleFlix />
-          <ButtonFlix as="a" href="/">Novo vídeo</ButtonFlix>
+          <ButtonFlix as="a" href="/cadastro/video">Novo vídeo</ButtonFlix>
         </HeaderFlix>
 
         <BannerMain

@@ -127,7 +127,7 @@ table {
 html,
 body {
 	font-size: 1px;
-	color: red !important;
+	/* color: red !important; */
 }
 
 #root {
