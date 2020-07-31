@@ -15,12 +15,12 @@ const Main = styled.main`
 
 // children = objeto props "aberto" ex: {props.children}
 // eslint-disable-next-line react/prop-types
-function PageDefault({ children }) {
+function PageDefault({ children, padding }) {
   return (
     <>
       <Menu />
       <Main>
-        <div style={{ fontSize: 25, paddingTop: 90 }}>
+        <div style={{ fontSize: 25, padding, paddingTop: 90 }}>
 
           {children}
         </div>
