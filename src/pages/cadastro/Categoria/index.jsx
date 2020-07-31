@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
   const formData = {
-
     name: '',
     description: '',
     color: '',
@@ -13,6 +12,21 @@ function CadastroCategoria() {
 
   const [categories, setCategories] = useState([]);
   const [values, setValues] = useState(formData);
+
+  useEffect(() => {
+    if (window.location.href.includes('localhost')) {
+      const API_URL = 'http://localhost:8080/categorias';
+      fetch(API_URL)
+        .then(async (res) => {
+          if (res.ok) {
+            const resposta = await res.json();
+            setCategories(resposta);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        });
+    }
+  }, []);
 
   function setValue(chave, valor) {
     setValues({
@@ -73,11 +87,15 @@ function CadastroCategoria() {
 
         </form>
         <br />
+        <div>
+          loading
+        </div>
+
         <ul>
-          {categories.map((category, indice) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <li key={`${category}${indice}`}>
+          {categories.map((category) => (
+            <li key={category.id}>
               {category.name}
+              {category.id}
             </li>
           ))}
         </ul>

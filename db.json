@@ -1,0 +1,22 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "name": "CATEGORIA BRABRA",
+            "description": "Descrição qualquer",
+            "color":"#ff0"
+        },
+        {
+            "id": 2,
+            "name": "CATEGORIA BRABRA 2 ",
+            "description": "Descrição qualquer 2",
+            "color":"#fff"
+        },
+        {
+            "id": 3,
+            "name": "CATEGORIA BRABRA 3 ",
+            "description": "Descrição qualquer 3",
+            "color":"#000"
+        }
+    ]
+}
