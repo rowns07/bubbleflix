@@ -14,18 +14,16 @@ function CadastroCategoria() {
   const [values, setValues] = useState(formData);
 
   useEffect(() => {
-    if (window.location.href.includes('localhost')) {
-      const API_URL = 'https://bubbleflixx.herokuapp.com/categorias';
+      const API_URL = window.location.hostname.includes('localhost') 
+      ? 'http://localhost:8080/categorias'
+      : 'https://bubbleflixx.herokuapp.com/categorias';
       fetch(API_URL)
         .then(async (res) => {
-          if (res.ok) {
             const resposta = await res.json();
-            setCategories(resposta);
-            return;
-          }
-          throw new Error('Não foi possível buscar os dados');
+            setCategories([
+              ...resposta,
+            ]);
         });
-    }
   }, []);
 
   function setValue(chave, valor) {
