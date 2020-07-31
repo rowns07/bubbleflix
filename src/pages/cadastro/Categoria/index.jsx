@@ -15,7 +15,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const API_URL = 'http://localhost:8080/categorias';
+      const API_URL = 'https://bubbleflixx.herokuapp.com/categorias';
       fetch(API_URL)
         .then(async (res) => {
           if (res.ok) {
