@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeaderFlix from './styles';
 import ButtonFlix from '../Button';
 import LogoBubbleFlix from '../Logo';
-import { Link } from 'react-router-dom';
 
 function Menu() {
   return (

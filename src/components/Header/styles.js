@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import ButtonFlix from '../Button';
 import LogoBubbleFlix from '../Logo';
 
-
 const HeaderFlix = styled.header`
     display:flex;
     justify-content:space-between;
