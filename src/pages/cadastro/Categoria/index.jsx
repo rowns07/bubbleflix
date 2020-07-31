@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import { useForm } from '../../../hooks/useForm';
+import repositoryCategories from '../../../repositories/categories';
 
 function CadastroCategoria() {
   const formData = {
@@ -15,16 +16,10 @@ function CadastroCategoria() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const API_URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categories'
-      : 'https://bubbleflixx.herokuapp.com/categories';
-    fetch(API_URL)
-      .then(async (res) => {
-        const resposta = await res.json();
-        setCategories([
-          ...resposta,
-        ]);
-      });
+    repositoryCategories.getAll()
+      .then((success) => {
+        setCategories(success);
+      }).catch((error) => console.log(error));
   }, []);
 
   return (
