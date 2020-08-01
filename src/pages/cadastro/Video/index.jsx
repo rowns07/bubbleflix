@@ -11,7 +11,7 @@ function CadastroVideo() {
   const history = useHistory();
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ title }) => title);
-  const { handleChange, values } = useForm({
+  const { handleChange, values, clearForm } = useForm({
     title: '',
     url: '',
     description: '',
@@ -80,10 +80,12 @@ function CadastroVideo() {
           onChange={handleChange}
           suggestions={categoryTitles}
         />
-
-        <button type="submit">
+        <ButtonFlix type="submit">
           Cadastrar Video
-        </button>
+        </ButtonFlix>
+        <ButtonFlix type="button" onClick={clearForm} style={{ marginLeft: 5, backgroundColor: 'white', color:'black' }}>
+          Limpar
+        </ButtonFlix>
       </form>
     </PageDefault>
   );

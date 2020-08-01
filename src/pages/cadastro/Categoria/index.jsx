@@ -10,6 +10,10 @@ function CadastroCategoria() {
     title: '',
     description: '',
     color: '',
+    link_extra: {
+      text: '',
+      url: '',
+    },
   };
 
   const { handleChange, values, clearForm } = useForm(formData);
@@ -32,11 +36,22 @@ function CadastroCategoria() {
 
         <form onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault();
-          // console.log('enviou né brabo?');
           setCategories([
             ...categories,
             values,
           ]);
+
+          repositoryCategories.create({
+            title: values.title,
+            description: values.description,
+            color: values.color,
+            link_extra: {
+              text: values.text,
+              url: values.url,
+            },
+          })
+            .then((success) => console.log('conteudo enviado', success));
+
           clearForm();
         }}
         >
@@ -64,6 +79,22 @@ function CadastroCategoria() {
             onChange={handleChange}
           />
 
+          <FormField
+            label="Link Extra Url"
+            type="text"
+            name="url"
+            value={values.url}
+            onChange={handleChange}
+          />
+
+          <FormField
+            label="Link Extra Text"
+            type="text"
+            name="text"
+            value={values.text}
+            onChange={handleChange}
+          />
+
           <button type="submit">
             Cadastrar
           </button>
@@ -77,7 +108,6 @@ function CadastroCategoria() {
           {categories.map((category) => (
             <li key={category.id}>
               {category.title}
-              {category.id}
             </li>
           ))}
         </ul>

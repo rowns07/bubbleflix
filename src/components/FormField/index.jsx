@@ -8,8 +8,9 @@ position: relative;
     min-height: 150px;
   }
   input[type="color"] {
-    padding-left: 56px;
+    padding-left: 17px;
   }
+
 `;
 
 const Label = styled.label``;
@@ -69,7 +70,7 @@ const Input = styled.input`
 `;
 
 function FormField({
-  type, name, value, label, onChange, suggestions
+  type, name, value, label, onChange, suggestions,
 }) {
   const fieldId = `id_${name}`;
   const isTypeTextArea = type === 'textarea';
@@ -78,7 +79,6 @@ function FormField({
   const hasValue = Boolean(value.length);
   const hasSuggestions = Boolean(suggestions.length);
 
-  // const hasValue = Boolean(value.length);
   return (
     <FormFieldWrapper>
       <label
@@ -130,7 +130,7 @@ FormField.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   suggestions: PropTypes.arrayOf(PropTypes.string),
 };
 

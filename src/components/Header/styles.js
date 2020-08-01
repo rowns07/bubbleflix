@@ -31,6 +31,7 @@ const HeaderFlix = styled.header`
         bottom:0;
         left:0;
         width:100vw;
+        text-align:center;
         }
     }
 `;
