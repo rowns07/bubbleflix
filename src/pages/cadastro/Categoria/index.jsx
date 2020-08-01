@@ -44,7 +44,7 @@ function CadastroCategoria() {
             label="Nome da Categoria"
             type="text"
             value={values.title}
-            name="name"
+            name="title"
             onChange={handleChange}
           />
 

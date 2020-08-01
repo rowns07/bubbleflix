@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import { useForm } from '../../../hooks/useForm';
 import repositoryVideos from '../../../repositories/videos';
+import repositoryCategories from '../../../repositories/categories';
+
 
 function CadastroVideo() {
-  const formData = {
+  const history = useHistory();
+  const [categorias, setCategorias] = useState([]);
+  const categoryTitles = categorias.map(({ title }) => title);
+  const { handleChange, values } = useForm({
     title: '',
-    description: '',
     url: '',
-  };
-
-  const { handleChange, values, clearForm } = useForm(formData);
-  const [movies, setMovies] = useState([]);
+    description: '',
+    category: '',
+  });
 
   useEffect(() => {
-    repositoryVideos.getAll()
-      .then((success) => {
-        console.log(success);
-      }).catch((error) => console.log(error));
+    repositoryCategories
+    .getAll()
+    .then((success) => {
+        setCategorias(success);
+      })
+      .catch((error) => 
+      console.log(error));
   }, []);
 
   return (
@@ -29,37 +35,50 @@ function CadastroVideo() {
         Cadastrar Categoria
       </Link>
 
-      <form
-        onSubmit={function handleSubmit(infosDoEvento) {
-          infosDoEvento.preventDefault();
-          // console.log('enviou né brabo?');
-          setMovies([
-            ...movies,
-            values,
-          ]);
-          clearForm();
-        }}
+      <form onSubmit={(event) => {
+        event.preventDefault();
+        const categoriaEscolhida = categorias.find((categoria) => {
+          return categoria.title === values.category;
+        });
+
+         repositoryVideos.create({
+          title: values.title,
+          url: values.url,
+          description: values.description,
+          categoryId: categoriaEscolhida.id,
+         })
+           .then(() => {
+             console.log('Cadastrou com sucesso!');
+             history.push('/');
+           });
+      }}
       >
+        
         <FormField
-          label="Titulo"
-          type="text"
+          label="title"
           value={values.title}
-          name="name"
+          name="title"
           onChange={handleChange}
         />
         <FormField
-          label="Link do Video"
-          type="text"
+          label="URL"
           value={values.url}
-          name="name"
+          name="url"
           onChange={handleChange}
         />
+        <FormField
+          label="Descrição"
+          value={values.description}
+          name="description"
+          onChange={handleChange}
+        />
+
         <FormField
           label="Categoria"
-          type="text"
-          value={values.description}
-          name="name"
+          name="category"
+          value={values.category}
           onChange={handleChange}
+          suggestions={categoryTitles}
         />
 
         <button type="submit">
