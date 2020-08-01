@@ -5,7 +5,7 @@ import FormField from '../../../components/FormField';
 import { useForm } from '../../../hooks/useForm';
 import repositoryVideos from '../../../repositories/videos';
 import repositoryCategories from '../../../repositories/categories';
-
+import ButtonFlix from '../../../components/Button';
 
 function CadastroVideo() {
   const history = useHistory();
@@ -20,40 +20,40 @@ function CadastroVideo() {
 
   useEffect(() => {
     repositoryCategories
-    .getAll()
-    .then((success) => {
+      .getAll()
+      .then((success) => {
         setCategorias(success);
       })
-      .catch((error) => 
-      console.log(error));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <PageDefault>
       <h1>Cadastro de Video</h1>
-      <Link to="/cadastro/categoria">
-        Cadastrar Categoria
-      </Link>
+
+      <ButtonFlix>
+        <Link to="/cadastro/categoria">
+          Cadastrar Categoria
+        </Link>
+      </ButtonFlix>
 
       <form onSubmit={(event) => {
         event.preventDefault();
-        const categoriaEscolhida = categorias.find((categoria) => {
-          return categoria.title === values.category;
-        });
+        const categoriaEscolhida = categorias.find((categoria) => categoria.title === values.category);
 
-         repositoryVideos.create({
+        repositoryVideos.create({
           title: values.title,
           url: values.url,
           description: values.description,
           categoryId: categoriaEscolhida.id,
-         })
-           .then(() => {
-             console.log('Cadastrou com sucesso!');
-             history.push('/');
-           });
+        })
+          .then(() => {
+            console.log('Cadastrou com sucesso!');
+            history.push('/');
+          });
       }}
       >
-        
+
         <FormField
           label="title"
           value={values.title}
