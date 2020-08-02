@@ -4,6 +4,7 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import { useForm } from '../../../hooks/useForm';
 import repositoryCategories from '../../../repositories/categories';
+import { Table } from './style';
 
 function CadastroCategoria() {
   const formData = {
@@ -104,13 +105,53 @@ function CadastroCategoria() {
 
         {categories.length === 0 && (<div>loading</div>)}
 
-        <ul>
-          {categories.map((category) => (
-            <li key={category.id}>
-              {category.title}
-            </li>
-          ))}
-        </ul>
+        <Table>
+          <thead>
+            <tr>
+              <Table.Td>
+                Titulo
+              </Table.Td>
+              <Table.Td>
+                Descrição
+              </Table.Td>
+              <Table.Td>
+                Opções
+              </Table.Td>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+
+              <tr key={category.id}>
+                <Table.Td>{category.title}</Table.Td>
+                <Table.Td>{category.link_extra.url}</Table.Td>
+                <Table.Td>
+                  <button
+                    style={{
+                      backgroundColor: 'red', color: 'white', borderColor: 'red', padding: '6rem',
+                    }}
+                    type="button"
+                    onClick={function deleteCategory() {
+                      console.log(category.id);
+                      repositoryCategories.deleteCategory(category.id)
+                        .then((foi) => {
+                          repositoryCategories.getAll()
+                            .then((suc) => setCategories(suc));
+                          console.log('REMOVEU MESMO TIO SE É LOUCO', foi);
+                        })
+                        .catch((erro) => {
+                          console.log('DEU RUIM E NAO FOI POUCO', erro);
+                        });
+                    }}
+                  >
+                    apagar
+                  </button>
+                </Table.Td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+
         <br />
 
         <Link to="/">

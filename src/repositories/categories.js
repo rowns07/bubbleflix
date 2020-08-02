@@ -41,8 +41,27 @@ function create(objetoDoVideo) {
   });
 }
 
+function deleteCategory(objetoDoVideo) {
+  console.log('OBJ - ', `${URL_CATEGORIES}/${objetoDoVideo}`);
+  return fetch(`${URL_CATEGORIES}/${objetoDoVideo}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(objetoDoVideo.id),
+  }).then(async (respostaDoServidor) => {
+    if (respostaDoServidor.ok) {
+      const resposta = await respostaDoServidor.json();
+      return resposta;
+    }
+
+    throw new Error('Não foi possível cadastrar os dados :(');
+  });
+}
+
 export default {
   getAllWithVideos,
   getAll,
   create,
+  deleteCategory,
 };
