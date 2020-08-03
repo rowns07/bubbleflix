@@ -8,7 +8,7 @@ position: relative;
     min-height: 150px;
   }
   input[type="color"] {
-    padding-left: 17px;
+    padding-left: 0px;
   }
 
 `;
@@ -31,6 +31,7 @@ Label.Text = styled.span`
   font-weight: 300;
   
   transition: .1s ease-in-out;
+
 `;
 
 const Input = styled.input`

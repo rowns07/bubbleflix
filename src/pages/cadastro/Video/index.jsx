@@ -28,15 +28,8 @@ function CadastroVideo() {
   }, []);
 
   return (
-    <PageDefault>
-      <h1>Cadastro de Video</h1>
-
-      <ButtonFlix>
-        <Link to="/cadastro/categoria">
-          Cadastrar Categoria
-        </Link>
-      </ButtonFlix>
-
+    <PageDefault padding={50}>
+      <h1 className="title-page">Novo de Video</h1>
       <form onSubmit={(event) => {
         event.preventDefault();
         const categoriaEscolhida = categorias.find((categoria) => categoria.title === values.category);
@@ -80,12 +73,29 @@ function CadastroVideo() {
           onChange={handleChange}
           suggestions={categoryTitles}
         />
-        <ButtonFlix type="submit">
-          Cadastrar Video
-        </ButtonFlix>
-        <ButtonFlix type="button" onClick={clearForm} style={{ marginLeft: 5, backgroundColor: 'white', color:'black' }}>
-          Limpar
-        </ButtonFlix>
+
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', width: '100%',
+        }}
+        >
+          <div>
+
+            <ButtonFlix type="submit">
+              Adicionar Video
+            </ButtonFlix>
+            <ButtonFlix type="button" onClick={clearForm} style={{ marginLeft: 5, backgroundColor: 'white', color: 'black' }}>
+              Limpar
+            </ButtonFlix>
+          </div>
+
+          <div>
+            <ButtonFlix style={{ backgroundColor: '#d4552b', border: '#d4552b' }}>
+              <Link to="/cadastro/categoria" style={{ textDecoration: 'none', color: 'white' }}>
+                Cadastrar Categoria
+              </Link>
+            </ButtonFlix>
+          </div>
+        </div>
       </form>
     </PageDefault>
   );

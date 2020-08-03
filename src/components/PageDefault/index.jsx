@@ -8,22 +8,21 @@ const Main = styled.main`
     background-color:var(--color-black-dark);
     color:var(--color-primary-medium);
     flex:1;
-    padding-top:50px;
-    padding-left:5%;
-    padding-right:5%;
+    font-size:25rem;
+    padding-top:120rem;
+
+
 `;
 
 // children = objeto props "aberto" ex: {props.children}
 // eslint-disable-next-line react/prop-types
-function PageDefault({ children, padding }) {
+function PageDefault({ children, padding, paddingTop }) {
   return (
     <>
       <Menu />
-      <Main>
-        <div style={{ fontSize: 25, padding, paddingTop: 90 }}>
+      <Main style={{ padding, paddingTop }}>
 
-          {children}
-        </div>
+        {children}
       </Main>
       <FooterM />
     </>

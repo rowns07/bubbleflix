@@ -5,6 +5,7 @@ import FormField from '../../../components/FormField';
 import { useForm } from '../../../hooks/useForm';
 import repositoryCategories from '../../../repositories/categories';
 import { Table } from './style';
+import ButtonFlix from '../../../components/Button';
 
 function CadastroCategoria() {
   const formData = {
@@ -28,11 +29,10 @@ function CadastroCategoria() {
   }, []);
 
   return (
-    <PageDefault>
+    <PageDefault padding={50}>
       <div style={{ fontSize: 25 }}>
-        <h1>
+        <h1 className="title-page">
           Cadastro de Categoria:
-          {values.title}
         </h1>
 
         <form onSubmit={function handleSubmit(infosDoEvento) {
@@ -96,13 +96,16 @@ function CadastroCategoria() {
             onChange={handleChange}
           />
 
-          <button type="submit">
+          <ButtonFlix type="submit">
             Cadastrar
-          </button>
+          </ButtonFlix>
+          <ButtonFlix type="button" onClick={clearForm} style={{ marginLeft: 5, backgroundColor: 'white', color: 'black' }}>
+            Limpar
+          </ButtonFlix>
 
         </form>
         <br />
-
+        <h3>Categorias Cadastradas:</h3>
         {categories.length === 0 && (<div>loading</div>)}
 
         <Table>
@@ -128,11 +131,10 @@ function CadastroCategoria() {
                 <Table.Td>
                   <button
                     style={{
-                      backgroundColor: 'red', color: 'white', borderColor: 'red', padding: '6rem',
+                      backgroundColor: 'red', color: 'white', borderColor: 'red', padding: '6rem', borderRadius: '4px',
                     }}
                     type="button"
                     onClick={function deleteCategory() {
-                      console.log(category.id);
                       repositoryCategories.deleteCategory(category.id)
                         .then((foi) => {
                           repositoryCategories.getAll()
@@ -155,7 +157,10 @@ function CadastroCategoria() {
         <br />
 
         <Link to="/">
-          Ir para home
+          <ButtonFlix>
+
+            Ir para home
+          </ButtonFlix>
         </Link>
 
       </div>
