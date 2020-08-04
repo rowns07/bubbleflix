@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": 1,
-      "title": "Corinthians",
+      "title": "Futebol",
       "color": "#c0392b",
       "link_extra": {
         "text": "Dedicado a toda nação",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "title": "BodyBulding",
+      "title": "Musculação",
       "color": "#d35400",
       "link_extra": {
         "text": "Cursos de Back End na Alura",
@@ -20,7 +20,16 @@
     },
     {
       "id": 3,
-      "title": "Data Science e Inteligência Artificial",
+      "title": "Música",
+      "color": "#ffa400",
+      "link_extra": {
+        "text": "Musicas do meu dia a dia",
+        "url": "https://www.alura.com.br/cursos-online-mobile"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Tecnologia",
       "color": "#9cd33b",
       "link_extra": {
         "text": "Cursos de Data Science na Alura",
@@ -55,58 +64,109 @@
       "url": "https://www.youtube.com/watch?v=AUCBlHMmlws"
     },
     {
-      "id": 5,
+      "title": "Descubra seu biotipo",
+      "url": "https://www.youtube.com/watch?v=UTHHEOqJIaU",
+      "description": "Renato Cariani fala sobre biotipo",
       "categoryId": 2,
-      "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-      "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+      "id": 5
     },
     {
-      "id": 6,
+      "title": "Como calcular sua dieta",
+      "url": "https://www.youtube.com/watch?v=uxiGNchGu3A",
+      "description": "Felipe Linares e Renato Cariani ensinando principios básicos para montar uma simples dieta",
       "categoryId": 2,
-      "title": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+      "id": 6
     },
     {
-      "id": 7,
+      "title": "Avaliação da loira do sul",
+      "url": "https://www.youtube.com/watch?v=UU3K_KHKks8",
+      "description": "Felipe Franco avaliando shape da loira do sul.",
       "categoryId": 2,
-      "title": "Programei 4 robôs que criam vídeos para mim no YouTube",
-      "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+      "id": 7
     },
     {
-      "id": 8,
+      "title": "Japamorfo e Ramon",
+      "url": "https://www.youtube.com/watch?v=7vxkbMll-5w",
+      "description": "Felipe Franco e Ramon avaliando shape do Japamorfo",
       "categoryId": 2,
-      "title": "API: Dicionário do Programador",
-      "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+      "id": 8
     },
     {
-      "id": 9,
+      "title": "Avaliando shape da Andreia do Acre",
+      "url": "https://www.youtube.com/watch?v=UZSIqEzS5ro",
+      "description": "Felipe Franco avaliando o shape da Andreia do Acre",
       "categoryId": 2,
-      "title": "Usando Git Direito",
-      "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+      "id": 9
     },
     {
-      "id": 10,
+      "title": "Racionais Mc's - Preto Zica",
+      "url": "https://www.youtube.com/watch?v=kjtRkf31Dq8",
+      "description": "Um dos classicos do grupo de rap Racionais MC's",
       "categoryId": 3,
-      "title": "Teste de Turing",
-      "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+      "id": 10
     },
     {
-      "id": 11,
+      "title": "Racionais Mc's - Vida Loka II",
+      "url": "https://www.youtube.com/watch?v=Fu5kcgz73TY",
+      "description": "Um dos classicos do grupo de rap Racionais MC's",
       "categoryId": 3,
-      "title": "O que é Data Science?",
-      "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+      "id": 11
     },
     {
-      "id": 12,
+      "title": "Djonga - A Música da Mãe (Clipe Oficial)",
+      "url": "https://www.youtube.com/watch?v=Nrrj1Z7nY64",
+      "description": "Som de Djonga rapper sensação dos ultimos anos",
       "categoryId": 3,
-      "title": "Melhor forma de aprender Python",
-      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+      "id": 12
     },
     {
-      "id": 13,
+      "title": "Djonga - JUNHO DE 94 (Clipe Oficial)",
+      "url": "https://www.youtube.com/watch?v=hTUEjPmX0tE",
+      "description": "Som de Djonga rapper sensação dos ultimos anos",
       "categoryId": 3,
-      "title": "Como ingressar no mercado de Data Science?",
-      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+      "id": 14
+    },
+    {
+      "title": " 'Bluesman' Álbum Completo - Baco Exu do Blues",
+      "url": "https://www.youtube.com/watch?v=wk-Eg7QjCWI",
+      "description": "Som de Djonga rapper sensação dos ultimos anos",
+      "categoryId": 3,
+      "id": 15
+    },
+    {
+      "title": "Portfólios com Viagem no tempo, Super Heróis e GitHub | APIs e Layouts para melhorar no Front End",
+      "url": "https://www.youtube.com/watch?v=ROeA2H-EQ6w",
+      "description": "Esse vídeo é para você que quer organizar seu portifólio e você que ta começando com Front End! Vamos falar sobre como guardar pra semprpe um site que vocês fez, como pegar layouts gratuitos, um backlog G-I-G-A-N-T-E-S-C-O de projetos pra você praticar com exemplos, tarefas e muito mais tudo nesse vídeo, bora ver",
+      "categoryId": 4,
+      "id": 16
+    },
+    {
+      "title": "Curso Angular #01: Introdução",
+      "url": "https://www.youtube.com/watch?v=tPOMG0D57S0",
+      "description": "Curso de Angular feito pela grande desenvolvedora Loiane Groner",
+      "categoryId": 4,
+      "id": 17
+    },
+    {
+      "title": "#ImersãoReact - Fazendo projeto!",
+      "url": "https://www.youtube.com/watch?v=p-r9SaU4rJM",
+      "description": "LiveCode ensinando a desenvolver seu proprio FLIX com o grande professor Marco Bruno",
+      "categoryId": 4,
+      "id": 18
+    },
+    {
+      "title": "5 dicas INFALÍVEIS para se atualizar sobre REACT",
+      "url": "https://www.youtube.com/watch?v=C80sX3uS5oA",
+      "description": "Ótimas dicas sobre REACT com Marco Bruno",
+      "categoryId": 4,
+      "id": 19
+    },
+    {
+      "title": "Qual a diferença entre forEach e map? #DicasDeJavaScript",
+      "url": "https://www.youtube.com/watch?v=JbzcLKiTThk",
+      "description": "Sempre ficou confuso sobre quando usar forEach ou o map do JavaScript? Nesse vídeo vamos juntos implementar essas funções e entender a lógica delas por debaixo dos panos, além de alguns casos legais de onde usa",
+      "categoryId": 4,
+      "id": 20
     }
   ]
 }
